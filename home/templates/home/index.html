@@ -1,6 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">It works</h1>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-around">
+            <div class="col-sm-12 col-md-8 text-center mb-3">
+                <h1 class="display-4 logo-font text-black">Ssaw</h1>
+                <h2 class="display-5 logo-font text-black">Nature Collection</h2>
+            </div>
+            <div class="col-sm-12 col-md-8 text-center mb-3">
+                <div class="carousel">
+                    <button class="carousel__button carousel__button--left"></button>
+                    <ul class="carousel__track">
+                        <li class="carousel__slide">
+                            <div class="background-finish-1">Test1</div>
+                        </li>
+                        <li class="carousel__slide">
+                            <div class="background-finish-2">Test2</div>
+                        </li>
+                        <li class="carousel__slide">
+                            <div class="background-finish-3">Test3</div>
+                        </li>
+                    </ul>
+                    <button class="carousel__button carousel__button--right"></button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
