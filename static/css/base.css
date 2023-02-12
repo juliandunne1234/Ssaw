@@ -62,8 +62,8 @@ body {
     color: #000 !important;
 }
 
-.text-white {
-    color: #fff !important;
+.text-banner {
+    color: rgb(255, 255, 0) !important;
 }
 
 .border-black {
@@ -74,6 +74,11 @@ body {
 
 .card-area {
     height: 30vh;
+}
+
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
 }
 
 /* -------------------------------- Media Queries */
