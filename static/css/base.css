@@ -70,6 +70,12 @@ body {
     border: 1px solid black !important;
 }
 
+/* Products Page */
+
+.card-area {
+    height: 30vh;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
