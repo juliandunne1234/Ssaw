@@ -53,10 +53,10 @@
               </a>
               <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 <a href="{% url 'products' %}" class="dropdown-item">All Seasons</a>
-                <a href="#" class="dropdown-item">Spring</a>
-                <a href="#" class="dropdown-item">Summer</a>
-                <a href="#" class="dropdown-item">Autumn</a>
-                <a href="#" class="dropdown-item">Winter</a>
+                <a href="{% url 'products' %}?category=Spring" class="dropdown-item">Spring</a>
+                <a href="{% url 'products' %}?category=Summer" class="dropdown-item">Summer</a>
+                <a href="{% url 'products' %}?category=Autumn" class="dropdown-item">Autumn</a>
+                <a href="{% url 'products' %}?category=Winter" class="dropdown-item">Winter</a>
               </div>
             </li>
           </ul>
