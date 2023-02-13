@@ -2,49 +2,67 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-                {% if product.image %}
-                <div class="image-container my-5">
-                    <a href="{{ product.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid card-area" src="{{ product.image.url }}" alt="{{ product.name }}">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            {% if product.image %}
+            <div class="image-container mt-5">
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid card-area" src="{{ product.image.url }}"
+                        alt="{{ product.name }}">
+                </a>
+            </div>
+            <div class="product-details-container border-black">
+                <p class="mb-0">{{ product.name }}</p>
+                <p class="lead mb-0 text-left font-weight-bold">
+                    ${{ product.price }}
+                </p>
+                {% if product.category %}
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                        <i class="fas fa-tag mr-1"></i>{{ product.category.name }}
                     </a>
-                </div>
-            </div>
-            <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-                <div class="product-details-container">
-                    <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">
-                        ${{ product.price }}
-                    </p>
-                    {% if product.category %}
-                    <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.category.name }}
-                        </a>
-                    </p>
-                    {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                    {% endif %}
-                </div>
-            </div>
+                </p>
+                {% endif %}
+                {% if product.rating %}
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
-                    <h2 class="logo-font text-center">Product Removed</h2>
-                    <hr class="w-50 mb-1">
+                <small class="text-muted">No Rating</small>
                 {% endif %}
             </div>
         </div>
+        <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <form class="form border-black" action="{% url 'add_to_bag' product.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-4">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
+                                    max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="submit" class="col-lg-12 btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
+            </form>
+        </div>
+        {% else %}
+        <h2 class="logo-font text-center">Product Removed</h2>
+        <hr class="w-50 mb-1">
+        {% endif %}
     </div>
+</div>
 {% endblock %}

@@ -58,6 +58,12 @@ body {
     margin: auto;
 }
 
+.btn-black {
+    background: black;
+    color: white !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
 .text-black {
     color: #000 !important;
 }
