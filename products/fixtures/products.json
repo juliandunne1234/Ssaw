@@ -1,0 +1,210 @@
+[
+    {
+       "pk":1,
+       "model":"products.product1",
+       "fields":{
+          "sku":"qq5001340327",
+          "name":"Sunflower",
+          "image":"spring1.jpg",
+          "photographer":"Sean F",
+          "price":11.99,
+          "category":1,
+          "rating":3
+       }
+    },
+    {
+        "pk":2,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340425",
+           "name":"Lake",
+           "image":"spring2.jpg",
+           "photographer":"Terry L",
+           "price":15.99,
+           "category":1,
+           "rating":4
+        }
+     },
+     {
+        "pk":3,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340777",
+           "name":"Bloom",
+           "image":"spring3.jpg",
+           "photographer":"Sean F",
+           "price":7.99,
+           "category":1,
+           "rating":2
+        }
+     },
+     {
+        "pk":4,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340132",
+           "name":"Meander",
+           "image":"spring4.jpg",
+           "photographer":"Lucy W",
+           "price":19.99,
+           "category":1,
+           "rating":5
+        }
+     },
+     {
+        "pk":5,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340654",
+           "name":"Scenic",
+           "image":"summer1.jpg",
+           "photographer":"Anna S",
+           "price":3.99,
+           "category":2,
+           "rating":1
+        }
+     },
+     {
+        "pk":6,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340343",
+           "name":"Creek",
+           "image":"summer2.jpg",
+           "photographer":"Anna S",
+           "price":23.99,
+           "category":2,
+           "rating":6
+        }
+     },
+     {
+        "pk":7,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340777",
+           "name":"Canal",
+           "image":"summer3.jpg",
+           "photographer":"Lucy W",
+           "price":5.99,
+           "category":2,
+           "rating":2
+        }
+     },
+     {
+        "pk":8,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340377",
+           "name":"Greenways",
+           "image":"summer4.jpg",
+           "photographer":"Terry L",
+           "price":7.99,
+           "category":2,
+           "rating":5
+        }
+     },
+     {
+        "pk":9,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340747",
+           "name":"Red Rows",
+           "image":"autumn1.jpg",
+           "photographer":"Alan R",
+           "price":7.99,
+           "category":3,
+           "rating":2
+        }
+     },
+     {
+        "pk":10,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340756",
+           "name":"Three Colors",
+           "image":"autumn2.jpg",
+           "photographer":"Alan R",
+           "price":19.99,
+           "category":3,
+           "rating":5
+        }
+     },
+     {
+        "pk":11,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340722",
+           "name":"Autumn Road",
+           "image":"autumn3.jpg",
+           "photographer":"Harry M",
+           "price":2.99,
+           "category":3,
+           "rating":1
+        }
+     },
+     {
+        "pk":12,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340117",
+           "name":"Reflections",
+           "image":"autumn4.jpg",
+           "photographer":"Terry L",
+           "price":13.99,
+           "category":3,
+           "rating":4
+        }
+     },
+     {
+        "pk":13,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340499",
+           "name":"White Top",
+           "image":"winter1.jpg",
+           "photographer":"John S",
+           "price":7.99,
+           "category":4,
+           "rating":2
+        }
+     },
+     {
+        "pk":14,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340999",
+           "name":"Winter is Coming",
+           "image":"winter2.jpg",
+           "photographer":"Terry L",
+           "price":31.99,
+           "category":4,
+           "rating":6
+        }
+     },
+     {
+        "pk":15,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340178",
+           "name":"Cotton Wood",
+           "image":"winter3.jpg",
+           "photographer":"John S",
+           "price":18.99,
+           "category":4,
+           "rating":5
+        }
+     },
+     {
+        "pk":16,
+        "model":"products.product1",
+        "fields":{
+           "sku":"qq5001340987",
+           "name":"Winter Rise",
+           "image":"winter4.jpg",
+           "photographer":"John S",
+           "price":15.99,
+           "category":4,
+           "rating":4
+        }
+     }
+]
