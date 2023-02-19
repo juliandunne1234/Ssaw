@@ -17,6 +17,9 @@ class Category1(models.Model):
     def __str__(self):
         return self.name
 
+    def get_name(self):
+        return self.name
+
 
 class Product1(models.Model):
     category = models.ForeignKey('Category1', null=True, blank=True, on_delete=models.SET_NULL)
