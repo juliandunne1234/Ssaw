@@ -2,6 +2,7 @@
 from django import forms
 from .models import Product1, Category1
 
+
 class ProductForm(forms.ModelForm):
 
     class Meta:
