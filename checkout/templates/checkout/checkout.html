@@ -37,7 +37,7 @@
                 </div>
             </div>
             {% for item in bag_items %}
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-2 mb-1">
                     <a href="{% url 'product_detail' item.product.id %}">
                         <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">

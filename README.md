@@ -1,108 +1,328 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Ssaw Collections
 
-Welcome juliandunne1234,
+![Enter Pic](assets/images/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Live application can be found here](/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This is a full-stack e-commerce project built using Django, Python, HTML, CSS and JavaScript. I have created a website for 'Ssaw - Nature Collection' that and allows customers to purchase prints of photography from the online shop. Ssaw is an acronym for Spring, Summer, Autumn and Winter and the nature collection is a theme of the shop whereby each collection focuses on a subject that captures the four seasons.
 
-## Gitpod Reminders
+## Table of Contents
+1. [**UX**](#ux)
+    - [**Strategy**](#strategy)
+    - [**User stories**](#user-stories)
+    - [**Scope**](#scope)
+    - [**Structure**](#structure)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+2. [**Features**](#features)
 
-`python3 -m http.server`
+3. [**Technologies Used**](#technologies-used)
 
-A blue button should appear to click: _Make Public_,
+4. [**Testing**](#testing)
 
-Another blue button should appear to click: _Open Browser_.
+5. [**Deployment**](#deployment)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+6. [**Credits**](#credits)
 
-A blue button should appear to click: _Make Public_,
+---
+## UX
 
-Another blue button should appear to click: _Open Browser_.
+## Strategy
+Using the core UX principles I first started with Strategy, thinking about the target audience for this e-commerce store and the features they would benefit from.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The target audience for 'Ssaw' are:
+- Homeowners, landlords, renting
+- 20 to 65 year olds
 
-To log into the Heroku toolbelt CLI:
+These users will be looking for:
+- An informative website, that is easy to use and easy to purchase items
+- Ability to view all prints that are for sale
+- User account functionality to view past orders and store billing information
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+It is assumed that there will be an even split between users viewing the website on their mobiles phone and laptops. Creating a responsive is integral to the website design. Bootstrap grids and elements & custom CSS was used for this purpose.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Stories
 
-------
+See defined user stories [here](https://github.com/users/juliandunne1234/projects/15)
 
-## Release History
+### **Epic 1 - Core Functionality**:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### **Epic 2 - Products**:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### **Epic 3 - Orders**:
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### **Epic 4 - Admin Functionality**:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### **Epic 5 - User Account**:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### **Epic 6 - Marketing**:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Scope
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+In order to achieve the desired user & business goals, the following features will be included:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Responsive navbar to navigate the various pages throughout the site
+- Landing page with informative image carousel
+- Products page, that displays all prints available for purchase with the option to filter by season.
+- My Account page, for logged in users to update their details which in turn updates the user model. User is also able to view their previous orders and wishlist.
+- Register/login feature using Django AllAuth so that users can create an account.
+- Edit/Delete functionality so that future Ssaw collections can be added/removed from the website.
+- Custom 404 and 500 error pages.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Databases
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The Elephant SQL database has been used for all database models: 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### **Profiles App**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Profiles app allows authenticated users to save their information so that when a user is logged in the order form is pre-populated with their userprofile information, creating an improved user experience. The `UserProfile` model has a one-to-one field that is linked to the Django AllAuth user account, upon logging in the model method `create_or_update_user_profile` creates the profile if it isn't already present in the model.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### **Products App**
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Products app controls the products that are available  to purchase using the models `Product1` & `Category1`.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+`Product1` allows adding/removing of products with the database. Only admin users are able to access this functionality and it can be done from the front end using the `add_product` view.
 
-------
+`Category1` stores the seasons  which each print is categorised under. The user can filter all products by season if required.
 
-## FAQ about the uptime script
+#### **Checkout App**
 
-**Why have you added this script?**
+Checkout app is used to purchase prints from website using the models, `Order` & `OrderLineItem`. 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+`OrdeLineItem` contains information regarding the products that have been purchased as part of a specific order. It has a foreign key to `Product1` & `Order`, it also contains the quantity purchased of that product and then the item total. This is then used to calculate the total cost for the order.
 
-**How will this affect me?**
+`Order` contains all of the relevant information for billing/shipping, a foreign key to the `UserProfile`. An order number is automatically generated when a new order is added to the database using `UUID`.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Landing Page
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+'Ssaw Collections' was chosen for the name of the e-commerce store because the theme of the store is based on the four seasons of spring, summer, autumn and winter.
 
 ---
 
-Happy coding!
+## Features
+
+### Navbar
+
+A fixed navbar remains at the top of each webpage at all times, allowing the user to easily navigate the website. The navbar is responsive and collapses the menu for smaller screen sizes. The options displayed vary depending on if the user is logged in and the access level that their account allows.
+
+![](assets/images/)
+
+On mobile, the menu is one list displayed in the centre:
+
+![](assets/images/)
+
+There is also a shopping bag icon with the order total including delivery displayed, to allow the user to keep track of the cost of their order.
+
+### Footer
+
+![](assets/images/)
+
+![](assets/images/)
+
+### Home page
+
+The home page implements the four seasons theme. There is a title and an animated bootstrap carousel, that displays images of each of the four seasons. 
+
+![](assets/images/)
+
+### All products
+
+This page displays all of the available prints for sale, displayed in a bootstrap grid. Each print has an image, name, photographer name, choice of sizes, price and rating.
+
+![](assets/images/)
+
+Products can be filtered by category. The filter sends a query to the database and returns the products categorised by season.
+
+![](assets/images/)
+
+
+### Bag
+
+The bag page provides an overview of all of the items added by the user. Product information is displayed that includes image, name, photographer, quantity, price and subtotal. The user can update the quantity required or drop the item from the bag from this page. There is also buttons to proceed to the checkout or to continue shopping.  
+
+![](assets/images/)
+
+If there is nothing in the bag then a message is displayed to say that the bag is empty.
+
+![](assets/images/)
+
+### Checkout
+
+The chcekout page is used to complete a purchase. There is a billing & card detail form to populate and a submit button to complete the transaction.
+
+![](assets/images/)
+
+The card payment feature has been built using [Stripe](https://stripe.com/). Payment functionality was tested using the Stripe development payment card details:
+
+![](assets/images/)
+
+Following the successful completion of a customer order the user is directed to the 'checkout success' page, which displays the order number and delivery details.
+
+![](assets/images/)
+
+If the payment can not be completed, the form does not submit, and an error message is displayed.
+
+![](assets/images/)
+
+### User profile
+
+A logged-in user can use the `my account` dropdown to select a link to the `My Profile` which contains their account details.
+
+![](assets/images/)
+
+The profile page can be used to update default shipping/billing address and contact information.
+
+![](assets/images/)
+
+A list of all the orders previously made by the user are also displayed.
+
+![](assets/images/)
+
+### Admin
+
+The admin section of this website allows a logged-in superuser to update the product models from the front end.
+
+#### **Product management**
+
+Superusers can edit/add/remov products using edit/delete links and also from the `Product Management` page that can be accessed from the `My Account` dropdown.
+
+![](assets/images/)
+
+---
+## Technologies Used
+
+I have used several technologies that have enabled this design to work:
+
+- [Django](https://www.djangoproject.com/)
+    - Django is the framework that has been used to build the website.
+- [Python](https://www.python.org/)
+    - Python is the programming language used to write all of the backend code.
+- [Bootstrap](https://getbootstrap.com/)
+    - Used for creating responsive design.
+- [Google Fonts](https://fonts.google.com/)
+    - Used to obtain the fonts used throughout the website
+- [Font Awesome](https://fontawesome.com/)
+    - Used to obtain the icons used on the high scores and rules pages.
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+    - Used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness across the project.
+- [GitHub](https://github.com/)
+    - Used to store code for the project after being pushed.
+- [Git](https://git-scm.com/)
+    - Used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [Gitpod](https://www.gitpod.io/)
+    - Used as the development environment.
+- [Heroku](https://dashboard.heroku.com/apps)
+    - Used to deploy my application.
+- [Pep8](http://pep8online.com/)
+    - Used to test my code for any issues or errors.
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    - Used to validate all HTML code written and used in this webpage.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate all CSS code written and used in this webpage.
+- [JSHint](https://jshint.com/)
+    - Used to validate JS code
+- [AmIResponsive](http://ami.responsivedesign.is/)
+    - Used to generate responsive image used in README file.
+- [SQLite](https://www.sqlite.org/index.html)
+    - SQLite used to run database tests locally.
+- [ElephantSQL](https://www.elephantsql.com/)
+    - ElephantSQL relational database used when deploying to Heroku to store the data for all models.
+- [AWS](https://aws.amazon.com/)
+    - Amazon AWS S3 to store all media files.
+
+---
+## Testing
+A combination of manual and automated testing was used to ensure the website's functionality meets the desired intent.
+
+### Code Validation
+All of the code included in the project has been validated using an online validator specific to the language, all code now passes with zero errors.
+
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    - Used to validate all HTML code written and used in this webpage.
+
+![](assets/images/)
+
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate all CSS code written and used in this webpage.
+
+![](assets/images/)
+
+- [JSHint](https://jshint.com/)
+    - Used to validate JS code
+
+- [Pep8](http://pep8online.com/)
+    - Used to test my Python code for any issues or errors; please note when using inline Flake8 linter some errors flagged up that didn't flag in pep8 and have therefore been left as they are.
+    
+    ![](assets/images/)
+
+---
+## Deployment
+
+The master branch of this repository has been used for the deployed version of this application.
+
+### Using Github & Gitpod
+
+To deploy the Django application, I had to use the [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template).
+
+- Click the `Use This Template` button.
+- Add a repository name and brief description.
+- Click the `Create Repository from Template` to create your repository.
+- To create a Gitpod workspace you then need to click `Gitpod`, this can take a few minutes.
+- When you want to work on the project it is best to open the workspace from Gitpod (rather than Github) as this will open your previous workspace rather than create a new one. You should pin the workspace so that it isn't deleted.
+-  Committing your work should be done often and should have clear/explanatory messages, use the following commands to make your commits:
+    - `git add .`: adds all modified files to a staging area
+    - `git commit -m "A message explaining your commit"`: commits all changes to a local repository.
+    - `git push`: pushes all your committed changes to your Github repository.
+
+### Stripe
+
+Stripe was used for setting up payments for the e-commerce store. This required creating a Stripe account and using the [documentation](https://stripe.com/docs/payments/online-payments) provided to add the relevant HTML, python & JS code to the project.
+
+### AWS static and media storage
+
+All static and media files are stored in the cloud using Amazon AWS S3; i have created a bucket, user group and user that can access this site and the relevant files. 
+
+![](assets/images/)
+
+### Creating an Application with Heroku
+
+I followed the below steps using the Code Institute tutorial and [Django Blog cheatsheat](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+- The following command in the Gitpod CLI will create the relevant files needed for Heroku to install your project dependencies `pip3 freeze --local > requirements.txt`. Please note this file should be added to a .gitignore file to prevent the file from being committed. A `Procfile` is also required that specifies the commands that are executed by the app on startup. 
+
+1. Go to [Heroku.com](https://dashboard.heroku.com/apps) and log in; if you do not already have an account then you will need to create one.
+2. Click the `New` dropdown and select `Create New App`.
+3. Enter a name for your new project, all Heroku apps need to have a unique name, you will be prompted if you need to change it.
+4. Select the region you are working in.
+
+*Heroku Settings*
+You will need to set your Environment Variables - this is a key step to ensuring your application is deployed properly.
+- In the Settings tab, click on `Reveal Config Vars` and set the following variables:
+
+![](assets/images/)
+
+*Heroku Deployment using website*
+In the Deploy tab:
+1. Connect your Heroku account to your Github Repository following these steps:
+    1. Click on the `Deploy` tab and choose `Github-Connect to Github`.
+    2. Enter the GitHub repository name and click on `Search`.
+    3. Choose the correct repository for your application and click on `Connect`.
+2. You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the `Deploy Branch` button whenever you want a change made.
+3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should see the below `View` button, click this to open your application:
+
+![](assets/images/)
+
+*Heroku CLI deployment*
+Whilst building this project there was a security breach on Heroku which caused issues with deployment via their website. Due to this, I had to add a `runtime.txt` file specifying which version of Python to build the app with and used the following commands to push the code to Heroku:
+
+1. Login to Heroku via the CLI using `heroku login -i`
+2. Enter your email and password
+3. Connect to the Heroku git remote using the `heroku git:remote -a YOURAPPNAME`
+4. Push to the Heroku git remote using `git push heroku main`
+
+![](assets/images/)
+
+---
+## Credits
+
+Due to time constraints and to meet the submission deadlines a large part of this poject has used the Code insitute 
+[Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project.

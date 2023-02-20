@@ -13,14 +13,15 @@
 <div class="container">
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <div class="card">
-                <div class="image-container">
+            <div class="card col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="image-container mt-3">
                     {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
                         <img class="card-img-top img-fluid card-area" src="{{ product.image.url }}"
                             alt="{{ product.name }}">
                     </a>
                 </div>
+                <hr>
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }} <span
                             class="lead font-weight-bold mx-5">€{{ product.price }}</span></h5>
@@ -78,7 +79,8 @@
     </div>
 </div>
 {% else %}
-<h2 class="logo-font text-center">Product Removed</h2>
-<hr class="w-50 mb-1">
+<h2 class="logo-font text-center">Product Placeholder</h2>
+<hr>
+<h5 class="logo-font text-center">Add Image from Admin</h5>
 {% endif %}
 {% endblock %}
