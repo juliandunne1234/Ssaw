@@ -11,7 +11,6 @@ This is a full-stack e-commerce project built using Django, Python, HTML, CSS an
     - [**Strategy**](#strategy)
     - [**User stories**](#user-stories)
     - [**Scope**](#scope)
-    - [**Structure**](#structure)
 
 2. [**Features**](#features)
 
@@ -44,17 +43,29 @@ It is assumed that there will be an even split between users viewing the website
 
 See defined user stories [here](https://github.com/users/juliandunne1234/projects/15)
 
-### **Epic 1 - Core Functionality**:
+### **Epic 1 - Website Layout and Navigation**:
+1. As a user I can view the full list of items so that I can see everything that is for sale.
+2. As a user I can view individual item details so that I can see the price, picture sizes, rating and the picture for sale.
+3. As a user I can see cost of items in my shopping bag so that I can remain within budget.
 
-### **Epic 2 - Products**:
+### **Epic 2 - Registration and User Accounts**:
+4. As a user I can register & login so that I can save my billing/shiping details for future purchases.
+5. As a user I can login to my account so that I can see my previous purchases.
+6. As a user I can recieve email confirmation so that I can verify my account registration.
+7. As a user I can reset my password so that I can login to my account if I forget my password.
 
-### **Epic 3 - Orders**:
+### **Epic 3 - Filtering Categories**:
+8. As a user I can filter pictures by season so that I can search more easily for what I require.
 
-### **Epic 4 - Admin Functionality**:
+### **Epic 4 - Purchasing Items**:
+9. As a user I can see the items in my shopping bag so that I can add/remove items as required prior to purchasing them.
+10. As a user I can change the item size so that I can order different sized pictures if required.
+11. As a user I will recieve a confirmation email from the seller so that I can be sure the purchase completed successfully.
 
-### **Epic 5 - User Account**:
-
-### **Epic 6 - Marketing**:
+### **Epic 5 - Admin**:
+12. As admin user I can add items so that I can add items available to purchase from the store.
+13. As admin user I can update item details so that I can change price if on sale.
+14. As admin user I can delete items so that I can remove items that are not in demand.
 
 ## Scope
 
