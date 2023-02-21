@@ -1,8 +1,8 @@
 # Ssaw Collections
 
-![Enter Pic](assets/images/)
+![Enter Pic](assets/images/amiresponsive.jpg)
 
-[Live application can be found here](/)
+[Live application can be found here](https://ssaw-collections.herokuapp.com/)
 
 This is a full-stack e-commerce project built using Django, Python, HTML, CSS and JavaScript. I have created a website for 'Ssaw - Nature Collection' that and allows customers to purchase prints of photography from the online shop. Ssaw is an acronym for Spring, Summer, Autumn and Winter and the nature collection is a theme of the shop whereby each collection focuses on a subject that captures the four seasons.
 
@@ -115,78 +115,76 @@ Checkout app is used to purchase prints from website using the models, `Order` &
 
 A fixed navbar remains at the top of each webpage at all times, allowing the user to easily navigate the website. The navbar is responsive and collapses the menu for smaller screen sizes. The options displayed vary depending on if the user is logged in and the access level that their account allows.
 
-![](assets/images/)
+![](assets/images/fixed-navbar.jpg)
 
-On mobile, the menu is one list displayed in the centre:
+On mobile, the navbar is collapsed:
 
-![](assets/images/)
+![](assets/images/mobile-navbar.jpg)
 
 There is also a shopping bag icon with the order total including delivery displayed, to allow the user to keep track of the cost of their order.
 
 ### Footer
 
-![](assets/images/)
+The footer includes a newsletter sign up form that uses Mailchimp and social media icons that are also links to social media sites. 
+![](assets/images/footer.jpg)
 
-![](assets/images/)
 
 ### Home page
 
 The home page implements the four seasons theme. There is a title and an animated bootstrap carousel, that displays images of each of the four seasons. 
 
-![](assets/images/)
+![](assets/images/homepage.jpg)
 
 ### All products
 
 This page displays all of the available prints for sale, displayed in a bootstrap grid. Each print has an image, name, photographer name, choice of sizes, price and rating.
 
-![](assets/images/)
+![](assets/images/all_products.jpg)
 
 Products can be filtered by category. The filter sends a query to the database and returns the products categorised by season.
 
-![](assets/images/)
+![](assets/images/filter-by-season.jpg)
 
 
 ### Bag
 
-The bag page provides an overview of all of the items added by the user. Product information is displayed that includes image, name, photographer, quantity, price and subtotal. The user can update the quantity required or drop the item from the bag from this page. There is also buttons to proceed to the checkout or to continue shopping.  
+The bag page provides an overview of all of the items added by the user. Product information is displayed that includes image, name, photographer, quantity, price and subtotal. The user can drop the item from the bag from this page. There is also buttons to proceed to the checkout or to keep shopping.  
 
-![](assets/images/)
+![](assets/images/shopping-bag.jpg)
 
-If there is nothing in the bag then a message is displayed to say that the bag is empty.
+If there is nothing in the bag then the user can select the return to search button.
 
-![](assets/images/)
+![](assets/images/return-to-search.jpg)
 
 ### Checkout
 
-The chcekout page is used to complete a purchase. There is a billing & card detail form to populate and a submit button to complete the transaction.
+The checkout page is used to complete a purchase. There is a billing & card detail form to populate and a submit button to complete the transaction.
 
-![](assets/images/)
+![](assets/images/checkout.jpg)
 
 The card payment feature has been built using [Stripe](https://stripe.com/). Payment functionality was tested using the Stripe development payment card details:
 
-![](assets/images/)
+![](assets/images/card-payment.jpg)
 
 Following the successful completion of a customer order the user is directed to the 'checkout success' page, which displays the order number and delivery details.
 
-![](assets/images/)
+![](assets/images/checkout-success.jpg)
 
 If the payment can not be completed, the form does not submit, and an error message is displayed.
 
-![](assets/images/)
+![](assets/images/card-invalid.jpg)
 
 ### User profile
 
 A logged-in user can use the `my account` dropdown to select a link to the `My Profile` which contains their account details.
 
-![](assets/images/)
-
 The profile page can be used to update default shipping/billing address and contact information.
 
-![](assets/images/)
+![](assets/images/my-profile-customer-details.jpg)
 
 A list of all the orders previously made by the user are also displayed.
 
-![](assets/images/)
+![](assets/images/my-profile-order-history.jpg)
 
 ### Admin
 
@@ -196,7 +194,7 @@ The admin section of this website allows a logged-in superuser to update the pro
 
 Superusers can edit/add/remov products using edit/delete links and also from the `Product Management` page that can be accessed from the `My Account` dropdown.
 
-![](assets/images/)
+![](assets/images/product-management.jpg)
 
 ---
 ## Technologies Used
@@ -241,31 +239,6 @@ I have used several technologies that have enabled this design to work:
     - Amazon AWS S3 to store all media files.
 
 ---
-## Testing
-A combination of manual and automated testing was used to ensure the website's functionality meets the desired intent.
-
-### Code Validation
-All of the code included in the project has been validated using an online validator specific to the language, all code now passes with zero errors.
-
-- [W3C Markup Validation Service](https://validator.w3.org/) 
-    - Used to validate all HTML code written and used in this webpage.
-
-![](assets/images/)
-
-- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
-    - Used to validate all CSS code written and used in this webpage.
-
-![](assets/images/)
-
-- [JSHint](https://jshint.com/)
-    - Used to validate JS code
-
-- [Pep8](http://pep8online.com/)
-    - Used to test my Python code for any issues or errors; please note when using inline Flake8 linter some errors flagged up that didn't flag in pep8 and have therefore been left as they are.
-    
-    ![](assets/images/)
-
----
 ## Deployment
 
 The master branch of this repository has been used for the deployed version of this application.
@@ -290,9 +263,7 @@ Stripe was used for setting up payments for the e-commerce store. This required 
 
 ### AWS static and media storage
 
-All static and media files are stored in the cloud using Amazon AWS S3; i have created a bucket, user group and user that can access this site and the relevant files. 
-
-![](assets/images/)
+All static and media files are stored in the cloud using Amazon AWS S3; i have used the same boutique-ado project bucket, user group and user that can access this site and the relevant files. 
 
 ### Creating an Application with Heroku
 
@@ -307,9 +278,9 @@ I followed the below steps using the Code Institute tutorial and [Django Blog ch
 
 *Heroku Settings*
 You will need to set your Environment Variables - this is a key step to ensuring your application is deployed properly.
-- In the Settings tab, click on `Reveal Config Vars` and set the following variables:
+- In the Settings tab, click on `Reveal Config Vars`. The variables that need to be set are:
 
-![](assets/images/)
+![](assets/images/config-variables.jpg)
 
 *Heroku Deployment using website*
 In the Deploy tab:
@@ -318,9 +289,7 @@ In the Deploy tab:
     2. Enter the GitHub repository name and click on `Search`.
     3. Choose the correct repository for your application and click on `Connect`.
 2. You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the `Deploy Branch` button whenever you want a change made.
-3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should see the below `View` button, click this to open your application:
-
-![](assets/images/)
+3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should see the below `View` button, click this to open your application.
 
 *Heroku CLI deployment*
 Whilst building this project there was a security breach on Heroku which caused issues with deployment via their website. Due to this, I had to add a `runtime.txt` file specifying which version of Python to build the app with and used the following commands to push the code to Heroku:
@@ -329,9 +298,6 @@ Whilst building this project there was a security breach on Heroku which caused 
 2. Enter your email and password
 3. Connect to the Heroku git remote using the `heroku git:remote -a YOURAPPNAME`
 4. Push to the Heroku git remote using `git push heroku main`
-
-![](assets/images/)
-
 ---
 ## Credits
 

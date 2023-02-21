@@ -17,6 +17,11 @@ body {
     background-color: #000;
 }
 
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -291,7 +296,7 @@ a.category-badge > span.badge:hover {
     }
 }
   
-/* fixed top navbar only on medium and up */
+/* fixed top navbar on smallest screen sizes */
 @media (max-width: 320px) {
     .fixed-top-desktop-only {
         position: fixed;
