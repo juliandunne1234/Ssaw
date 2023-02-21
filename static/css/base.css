@@ -244,9 +244,55 @@ a.category-badge > span.badge:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    .display-4.logo-font.text-black {
+        font-size: 2.5rem;
+    }
+
+    .nav-link {
+        padding: 0.15rem;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+    #delivery-banner h4 {
+        font-size: .9rem;
+    }
+}
   
 /* fixed top navbar only on medium and up */
-@media (min-width: 320px) {
+@media (max-width: 320px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -258,12 +304,9 @@ a.category-badge > span.badge:hover {
     .header-container {
         padding-top: 150px;
     }
-}
 
-/* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 320px) {
-
-    .header-container {
-        padding-top: 240px;
+    .display-4.logo-font.text-black,
+    .display-5.logo-font.text-black {
+        font-size: 1.5rem;
     }
 }

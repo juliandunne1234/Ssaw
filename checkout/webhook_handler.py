@@ -25,7 +25,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
         send_mail(
             subject,
             body,
@@ -123,7 +123,7 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.load(bag).items():
-                    product = get_object_or_404(Product1, pk=item_id)
+                    product = Product1.objects.get(id=item_id)
                     for size, quantity in item_data['items_by_size'].items():
                         order_line_item = OrderLineItem(
                             order=order,

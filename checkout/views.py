@@ -119,7 +119,7 @@ def checkout(request):
 
     if not stripe_public_key:
         messages.warning(request, 'Check if the stripe_public_key is missing from env variables')
-    
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
